@@ -51,7 +51,6 @@ else:
     root.geometry(
         f"{config.Get('screen_width')}x{config.Get('screen_height')}")
 root.configure(background='black')
-root.bind("x", quit)
 root.after(1000, show_time)
 
 # Set the end date and time for the countdown
@@ -71,6 +70,7 @@ style.configure('Countdown.TLabel', font=fnt_countdown,
                 foreground=config.Get('countdown_color'), background='black')
 lbl1 = ttk.Label(root, text=config.Get('header_text'), style='Header.TLabel')
 lbl1.place(relx=0.5, rely=config.Get('header_y_pos'), anchor=CENTER)
+lbl1.bind("<Button-1>", quit)
 lbl2 = ttk.Label(root, textvariable=txt, style='Countdown.TLabel')
 lbl2.place(relx=0.5, rely=config.Get('countdown_y_pos'), anchor=CENTER)
 
