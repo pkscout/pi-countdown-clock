@@ -15,7 +15,7 @@ def show_time():
     # Get the time remaining until the event
     remaining = (endTime - datetime.datetime.now()).total_seconds()
     if remaining < 0:
-        countdown_string = 'Live!'
+        countdown_string = config.Get('passed_text')
     else:
         # calculate the seconds remaining
         secs_remaining = int(remaining % 60)
