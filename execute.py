@@ -22,7 +22,7 @@ def show_time():
         remaining //= 60
         secs_string = ('%sS' % str(secs_remaining)).rjust(2, '0')
         # calculate the minutes remaining
-        mins_remaining = remaining % 60
+        mins_remaining = int(remaining % 60)
         remaining //= 60
         mins_string = ('%sM' % str(mins_remaining)).rjust(2, '0')
         # calculate the hours remaining
