@@ -5,13 +5,13 @@ defaults = {'end_year': 2025,
             'end_day': 1,
             'end_hour': 0,
             'font': 'Helvetica',
-            'header_size': 200,
-            'countdown_size': 160,
+            'header_size': 160,
+            'countdown_size': 120,
             'header_color': 'white',
             'countdown_color': 'white',
             'header_text': 'BDay',
             'passed_text': 'Live!',
-            'fullscreen': False,
+            'fullscreen': True,
             'screen_width': 800,
             'screen_height': 480,
             'header_y_pos': 0.24,
@@ -34,6 +34,6 @@ def Get(name):
     setting = None
     if has_overrides:
         setting = getattr(overrides, name, None)
-    if not setting:
+    if setting is None:
         setting = defaults.get(name, None)
     return setting
